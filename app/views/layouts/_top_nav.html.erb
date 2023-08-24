@@ -36,7 +36,7 @@
             Signed in as <%= current_user.first_name %> <%= current_user.last_name %>
           </li>
           <li class="nav-link">
-            <%= link_to "Logout", '/logout', class: 'nav-link' %>
+            <%= link_to "Logout", '/logout',  class: 'nav-link', method: :post %>
           </li>
         <% else %>
           <li class="nav-link">
