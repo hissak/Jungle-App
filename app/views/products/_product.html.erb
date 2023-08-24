@@ -7,7 +7,7 @@
     </h1>
   <% end%>
   <div>
-  <% if product.quantity <= 0 %>
+  <% if product.soldout? %>
   <span class='soldout'>
     <%= fa_icon "ban" %> Sold Out
   </span>
