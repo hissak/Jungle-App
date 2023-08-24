@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+  get '/login' => 'sessions#new' # login form
+  post '/login' => 'sessions#create' # login action
+  post '/logout' => 'sessions#destroy' # logout action
 
 
   # The priority is based upon order of creation: first created -> highest priority.
