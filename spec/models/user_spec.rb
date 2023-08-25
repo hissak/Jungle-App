@@ -17,7 +17,13 @@ RSpec.describe User, type: :model do
         @user = User.new(first_name: 'Obi', last_name: 'Wan', email: '123@gmail.com', password: 'password', password_confirmation: 'xyz')
         expect(@user.save).to be_falsey
       end
-      it 'should not save if email, first name or last name are missing' do
+      it 'should not save if password is less than 6 characters' do
+        @user = User.new(first_name: 'Obi', last_name: 'Wan', email: '123@gmail.com', password: '12345', password_confirmation: '12345')
+        expect(@user.save).to be_falsey
+      end
+    end
+    context 'when a field is missing' do
+      it 'should not save' do
         @user1 = User.new(first_name: 'Obi', last_name: 'Wan', email: nil, password: 'password', password_confirmation: 'password')
         expect(@user1.save).to be_falsey
         @user2 = User.new(first_name: nil, last_name: 'Wan', email: '123@gmail.com', password: 'password', password_confirmation: 'password')
@@ -25,6 +31,6 @@ RSpec.describe User, type: :model do
         @user3 = User.new(first_name: 'Obi', last_name: nil, email: '123@gmail.com', password: 'password', password_confirmation: 'password')
         expect(@user3.save).to be_falsey
         end
-    end
+      end
   end
 end
