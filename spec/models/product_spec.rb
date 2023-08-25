@@ -23,6 +23,11 @@ RSpec.describe Product, type: :model do
         @product = Product.new(name: 'Cats', price: 60, quantity: 4, category: @category)
         expect(@product.category).to be_present
       end
+      it ' should save successfully' do
+        @category = Category.new(name: 'Bananas')
+        @product = Product.new(name: 'Cats', price: 60, quantity: 4, category: @category)
+        expect(@product.save).to be_truthy
+      end
   end
     context 'when a field is missing' do
       it ' should not have a name' do
