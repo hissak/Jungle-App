@@ -32,7 +32,7 @@ RSpec.describe Product, type: :model do
         @product.save
         expect(@product.category).to be_present
       end
-  end
+    end
     context 'when a field is missing' do
       it 'should not save successfully' do
         @category = Category.new(name: 'Bananas')
@@ -52,6 +52,5 @@ RSpec.describe Product, type: :model do
         expect(@product4.errors.full_messages).to include("Category can't be blank")
       end
     end
+  end
 end
-end
-

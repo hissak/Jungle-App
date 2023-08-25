@@ -8,5 +8,4 @@ class ApplicationRecord < ActiveRecord::Base
   def logged_in?
     session[:user_id].present?
   end
-  
 end
