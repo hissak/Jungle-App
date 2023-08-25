@@ -45,25 +45,25 @@ RSpec.describe User, type: :model do
     context 'when all fields are provided' do
       it 'should return the user if the credentials are valid' do
         @user = User.new(first_name: 'Obi', last_name: 'Wan', email: '123@gmail.com', password: '123456',
-        password_confirmation: '123456')
+                         password_confirmation: '123456')
         @user.save
         expect(User.authenticate_with_credentials(@user.email, @user.password)).to eq(@user)
       end
       it 'should return nil if the credentials are invalid' do
         @user = User.new(first_name: 'Obi', last_name: 'Wan', email: '123@gmail.com', password: '123456',
-        password_confirmation: '123456')
+                         password_confirmation: '123456')
         @user.save
         expect(User.authenticate_with_credentials(@user.email, 'abcdef')).to be_nil
       end
       it 'should return the user if the email is surrounded by whitespace' do
         @user = User.new(first_name: 'Obi', last_name: 'Wan', email: '123@gmail.com', password: '123456',
-        password_confirmation: '123456')
+                         password_confirmation: '123456')
         @user.save
         expect(User.authenticate_with_credentials("  #{@user.email}  ", @user.password)).to eq(@user)
       end
       it 'should return the user even though the email is in the wrong case' do
         @user = User.new(first_name: 'Obi', last_name: 'Wan', email: '123@gmail.com', password: '123456',
-        password_confirmation: '123456')
+                         password_confirmation: '123456')
         @user.save
         expect(User.authenticate_with_credentials(@user.email.upcase, @user.password)).to eq(@user)
       end
