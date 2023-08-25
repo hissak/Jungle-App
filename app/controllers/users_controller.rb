@@ -5,7 +5,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/"
     else
-      redirect_to :back
+      redirect_to "/signup"
     end
   end
     private
