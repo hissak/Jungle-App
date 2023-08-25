@@ -18,7 +18,7 @@ RSpec.describe Product, type: :model do
         @category = Category.new(name: 'Bananas')
         @product = Product.new(name: 'Cats', price_cents: 60, quantity: 4, category: @category)
         @product.save
-        expect(@product.price).to be_present
+        expect(@product.price_cents).to be_present
       end
       it 'should have a quantity' do
         @category = Category.new(name: 'Bananas')
