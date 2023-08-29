@@ -1,0 +1,21 @@
+describe('User Login', () => {
+  beforeEach(() => {
+    cy.visit('/signup')
+    cy.get('input[name="user[first_name]"]').type('123', {force: true})
+    cy.get('input[name="user[last_name]"]').type('123', {force: true})
+    cy.get('input[name="user[email]"]').type('123@gmail.com', {force: true})
+    cy.get('input[name="user[password]"]').type('123456', {force: true})
+    cy.get('input[name="user[password_confirmation]"]').type('123456', {force: true})
+    cy.get('button[type="commit"]').click({force: true})
+    cy.wait(1000)
+    cy.get('navlink').contains('Logout').click({force: true})
+    cy.wait(1000)
+    cy.visit('/login')
+  })
+  it('User can login', () => {
+    cy.get('input[name="email"]').type('123@gmail.com')
+    cy.get('input[name="password"]').type('123456')
+    cy.get('button[type="submit"]').click({force: true})
+    cy.get('.navbar-nav').contains('123').should("be.visible")
+  })
+  })
