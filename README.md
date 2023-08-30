@@ -7,7 +7,7 @@ Payment is completed with Stripe, after which an order summary is provided.
 
 [Home Page](https://github.com/hissak/Jungle-App/blob/master/Screenshots/Screenshot%202023-08-30%20at%205.32.47%20PM.png?raw=true)
 [Product list](https://github.com/hissak/Jungle-App/blob/master/Screenshots/Screenshot%202023-08-30%20at%205.33.01%20PM.png?raw=true)
-[Product details]()
+[Product details](https://github.com/hissak/Jungle-App/blob/master/Screenshots/Screenshot%202023-08-30%20at%205.45.04%20PM.png?raw=true)
 [Cart](https://github.com/hissak/Jungle-App/blob/master/Screenshots/Screenshot%202023-08-30%20at%205.33.09%20PM.png?raw=true)
 [Stripe Pop-up](https://github.com/hissak/Jungle-App/blob/master/Screenshots/Screenshot%202023-08-30%20at%205.33.21%20PM.png?raw=true)
 [Order Summary](https://github.com/hissak/Jungle-App/blob/master/Screenshots/Screenshot%202023-08-30%20at%205.33.51%20PM.png?raw=true)
